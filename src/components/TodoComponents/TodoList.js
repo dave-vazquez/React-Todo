@@ -5,12 +5,11 @@ import "./Todo.css";
 import Todo from "./Todo";
 
 const TodoList = props => {
-
-  const { todos, markCompletedHandler } = props;
+  const { todos, toggleCompleted } = props;
 
   return (
     <div>
-      {todos.map(todo => <Todo  key={todo.id} todo={todo.task} clickHandler={markCompletedHandler}/>)}
+      {todos.map(todo => <Todo key={todo.id} todo={todo} toggleCompleted={toggleCompleted}/>)}
     </div>
   );
 };

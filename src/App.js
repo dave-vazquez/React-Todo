@@ -2,16 +2,17 @@ import React from "react";
 import "./App.css";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
+import ClearButton from "./components/TodoComponents/ClearButton";
 
 const todos = [
   {
     task: "Organize Life",
-    id: 1,
+    id: 248,
     completed: false
   },
   {
     task: "Fix Everything",
-    id: 2,
+    id: 145,
     completed: false
   }
 ];
@@ -32,19 +33,24 @@ class App extends React.Component {
     this.state = defaultState;
   }
 
-  markCompletedHandler = event => {
-    console.log('click!');
-    console.log(event.target.key);
-    todos.forEach(todo => {
-      if(todo.id === event.target.key) {
-        todo.completed = !todo.completed;
-        
-      }
+  toggleCompleted = todoID => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if(todo.id === todoID) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        }
+          return todo;
+      })
+    });
+  }
+
+  clearCompleted = () => {
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.completed)
     })
-
-    event.target.style.color = "red";
-
-    this.setState({todos: todos})
   }
 
   changeHandler = event => {
@@ -73,7 +79,7 @@ class App extends React.Component {
       <div className="app-container">
         <TodoList 
           todos={this.state.todos} 
-          markCompletedHandler={this.markCompletedHandler}  
+          toggleCompleted={this.toggleCompleted}  
           />
         <TodoForm 
           changeHandler={this.changeHandler}
@@ -81,6 +87,7 @@ class App extends React.Component {
       
           task={this.state.task}
         />
+        <ClearButton clearCompleted={this.clearCompleted}/>
       </div>
     );
   }
