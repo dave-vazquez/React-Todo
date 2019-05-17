@@ -4,7 +4,7 @@ const ClearButton = props => {
     const { clearCompleted } = props;
 
     return (
-        <button onClick={clearCompleted}>Clear Completed</button>
+        <button className="clear-button" onClick={clearCompleted}>Clear Completed</button>
     );
 };
 

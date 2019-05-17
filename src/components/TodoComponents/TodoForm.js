@@ -6,15 +6,16 @@ import "./Todo.css";
 const TodoForm = props => {
 	const { changeHandler, addTaskHandler, task } = props;
   return (
-    <form name="taskForm">
+    <form className="task-form" name="taskForm">
       <input
+        className="task-input"
         type="text"
         value={task}
-        placeholder="Add Item"
+        placeholder="Add Task"
         name="task"
         onChange={changeHandler}
       />
-      <button onClick={addTaskHandler}>Add Item</button>
+      <button className="submit-task-button" onClick={addTaskHandler}>+</button>
     </form>
   );
 };

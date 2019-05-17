@@ -6,13 +6,8 @@ import ClearButton from "./components/TodoComponents/ClearButton";
 
 const todos = [
   {
-    task: "Organize Life",
-    id: 248,
-    completed: false
-  },
-  {
-    task: "Fix Everything",
-    id: 145,
+    task: "Mark this task complete",
+    id: Date.now(),
     completed: false
   }
 ];
@@ -21,7 +16,7 @@ const defaultState = {
   todos: todos,         // TodoList --> Todo
   task: "",             // Todo Form
   id: undefined,        // Todo Form
-  completed: false      // Todo Gorm
+  completed: false      // Todo Form
 }
 
 class App extends React.Component {
@@ -77,17 +72,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-container">
+        <div className="form-container">
+          <h1 className="form-header">To Do List</h1>
+          <TodoForm 
+            changeHandler={this.changeHandler}
+            addTaskHandler={this.addTaskHandler}
+            task={this.state.task}
+          />
+        </div>
+        
         <TodoList 
           todos={this.state.todos} 
           toggleCompleted={this.toggleCompleted}  
-          />
-        <TodoForm 
-          changeHandler={this.changeHandler}
-          addTaskHandler={this.addTaskHandler}
-      
-          task={this.state.task}
         />
-        <ClearButton clearCompleted={this.clearCompleted}/>
+        <div className="clear-button-container">
+          <ClearButton clearCompleted={this.clearCompleted}/>
+        </div>
       </div>
     );
   }
