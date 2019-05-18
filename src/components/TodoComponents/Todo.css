@@ -1,0 +1,104 @@
+
+.task-form {
+	display: flex;
+	align-items: center;
+
+	height: 75px;
+}
+
+.task-input {
+	height: 35px;
+	width: 250px;
+
+	color: #DBDBDB;
+	font-family: 'ABeeZee', serif;
+
+	border: none;
+	padding-left: 10px;
+
+	font-size: 18px;
+	background: #675A5A;
+	box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.submit-task-button {
+	width: 35px;
+	height: 35px;
+
+	color: #DBDBDB;
+	font-size: 25px;
+
+	margin-left: 20px;
+
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.397);
+
+	background: #2C8DA6;
+	line-height: 10px;
+	cursor: pointer;
+}
+
+.submit-task-button:hover {
+	background: #237488;
+}
+
+.todo-list {
+	margin: 0;
+}
+
+.todo {
+	position:relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+
+	padding-left: 20px;
+
+	color: #2b2b2b;
+
+	cursor: pointer;
+
+	background: linear-gradient(95.92deg, #2C8DA6 0%, #1c505e 100%);
+	border-bottom: 1px solid #313131;
+
+	box-shadow: 4px 0 10px -2px rgba(0, 0, 0, 0.397);
+	
+
+	height: 50px;
+}
+
+.todo:hover {
+	background: linear-gradient(95.92deg, rgb(38, 120, 141) 0%, #163e49 100%);
+}
+
+.completed {
+	text-decoration: line-through;
+	background: linear-gradient(95.92deg, #EE3A3A 0%, #771B26 100%);
+}
+
+.completed:hover {
+	text-decoration: line-through;
+	background: linear-gradient(95.92deg, #d43232 0%, #5c141d 100%);
+}
+
+.clear-button {
+	width: 200px;
+	height: 30px;
+
+	color: #DBDBDB;
+	font-size: 16px;
+
+	border: none;
+	outline: none;
+
+	background: #2C8DA6;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.473);
+
+	cursor: pointer;
+}
+
+.clear-button:hover {
+	background: #237488;
+}

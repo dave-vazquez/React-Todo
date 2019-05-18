@@ -1,0 +1,48 @@
+.app-container {
+    width: 500px;
+    margin: auto;
+
+    /* border: 1px solid #313131;
+    border-radius: 10px; */
+
+    /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.397); */
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    background: linear-gradient(97.8deg, #5B434C 0%, #38282E 100%);
+    mix-blend-mode: normal;
+    border-radius: 10px 10px 0px 0px;
+
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.397);
+    position:relative;
+    z-index: 0;
+}
+
+.form-header {
+    color: #DBDBDB;
+    font-size: 28px;
+}
+
+.clear-button-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50px;
+
+    border-top: 1px solid #313131;
+
+    background: linear-gradient(97.8deg, #5B434C 0%, #38282E 100%);
+    mix-blend-mode: normal;
+    border-radius: 0px 0px 10px 10px;
+
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.397);
+}
