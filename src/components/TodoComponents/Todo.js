@@ -2,17 +2,32 @@
 // feel free to change this component.js into TodoList.js
 import React from "react";
 import "./Todo.css";
+import { TweenLite, Elastic, Power2 } from "gsap";
 
-const Todo = props => {
-  const { todo, toggleCompleted } = props;
-  return (
-    <div 
-      className={`todo${todo.completed ? " completed" : ""}`}
-      onClick={() => toggleCompleted(todo.id)}
-    >
-      <p>{todo.task}</p>
-    </div>
-  );
+class Todo extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.ref = React.createRef();
+  }
+
+  componentDidMount() {
+    console.log(this.ref);
+    TweenLite.fromTo(this.ref.current, .5, { x: "-1000"}, {ease: Elastic.easeOut.config(.5, 0.3), x: "0"});
+  }
+
+  render() {
+    return (
+      <div 
+        className={`todo${this.props.todo.completed ? " completed" : ""}`}
+        onClick={() => this.props.toggleCompleted(this.props.todo.id)}
+        ref={this.ref}
+      >
+        <p>{this.props.todo.task}</p>
+      </div>
+    );
+  } 
 };
 
 export default Todo;
